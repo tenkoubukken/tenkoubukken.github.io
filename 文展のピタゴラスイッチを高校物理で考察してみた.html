@@ -60,6 +60,273 @@ MathJax = {
 <article class="article">
 
 
+        <p>
+            文展でお見せしたピタゴラスイッチのスタートに図１のような装置がありました
+            （容器は傾いていましたが、話を簡単にするため水平につるされていると仮定します）。
+            同じ高さから球を静かに離したとして、容器に球が入るためにはどのような条件が必要でしょうか。
+            同じところからボールを離すので、球が飛び出した時の速さは同じです。その速さを \(v\) と置きます。
+            図２のように、球が飛び出す位置に原点を置く座標を考えてみます。
+            図の \(l_1\)、\(l_2\) はそれぞれ容器の手前の壁、奥の壁の \(x\) 座標で、
+            容器の上端の \(y\) 座標を \(h\) としています。
+            つまり、容器に球が入るためには
+        </p>
+
+        <div class="equation">
+        \[
+        y(l_1)>h
+        \qquad\text{かつ}\qquad
+        y(l_2)<h
+        \]
+        </div>
+
+        <p>
+            である必要があります。この条件を満たす \(v\) や \(\theta\) の範囲を求めてみましょう。
+        </p>
+
+        <p>とりあえず \(x\) における \(y\) 座標、\(y(x)\) を表します。</p>
+
+        <div class="equation">
+        \[
+        x=v\cos\theta\cdot t
+        \]
+        </div>
+
+        <div class="equation">
+        \[
+        y=v\sin\theta\cdot t-\frac12gt^2
+        \]
+        </div>
+
+        <p>ですから、\(t\) を消去すると、</p>
+
+        <div class="equation">
+        \[
+        y=x\tan\theta
+        -\frac{gx^2}{2v^2\cos^2\theta}
+        \]
+        </div>
+
+        <p>
+            \(\frac{1}{\cos^2\theta}=1+\tan^2\theta\) を代入して整理すると、
+        </p>
+
+        <div class="equation">
+        \[
+        y
+        =
+        -\frac{g x^2}{2v^2}\tan^2\theta
+        +x\tan\theta
+        -\frac{g x^2}{2v^2}
+        \qquad\cdots①
+        \]
+        </div>
+
+        <h2>[1] \(y(l_1)>h\) を満たす \(s\) の範囲</h2>
+
+        <p>
+            \(\tan\theta=s\)、\(s>0\) と置いて、式①に \(x=l_1\) を代入すると、
+        </p>
+
+        <div class="equation">
+        \[
+        -\frac{gl_1^2}{2v^2}s^2
+        +l_1s
+        -\frac{gl_1^2}{2v^2}
+        >h
+        \]
+        </div>
+
+        <p>すなわち、</p>
+
+        <div class="equation">
+        \[
+        s^2-\frac{2v^2}{gl_1}s
+        +1+\frac{2v^2h}{gl_1^2}<0
+        \qquad\cdots②
+        \]
+        </div>
+
+        <p>
+            この左辺を \(f(s)\) と置くと、\(y=f(s)\) のグラフは下に凸の放物線を表します。
+            この放物線が \(s\) 軸と2点で交わらなければ式②を満たすことはないので、
+            \(f(s)=0\) の判別式 \(D\) は0より大きい必要があります。
+        </p>
+
+        <div class="equation">
+        \[
+        \frac{D}{4}
+        =
+        \frac{v^4-2ghv^2-g^2l_1^2}{g^2l_1^2}>0
+        \]
+        </div>
+
+        <p>
+            \(v^2\ge0\) に注意して、
+        </p>
+
+        <div class="equation">
+        \[
+        v^2>g\left(h+\sqrt{h^2+l_1^2}\right)
+        \]
+        </div>
+
+        <p>すなわち、</p>
+
+        <div class="equation">
+        \[
+        v>\sqrt{g\left(h+\sqrt{h^2+l_1^2}\right)}
+        \]
+        </div>
+
+        <p>
+            でなければなりません。\(D>0\) の場合だけ考えて不等式②を解けばよくて、
+        </p>
+
+        <div class="equation">
+        \[
+        \frac{v^2-\sqrt{v^4-2ghv^2-g^2l_1^2}}{gl_1}
+        <s<
+        \frac{v^2+\sqrt{v^4-2ghv^2-g^2l_1^2}}{gl_1}
+        \qquad\cdots③
+        \]
+        </div>
+
+        <p>
+            これは \(s>0\) を満たしています。
+        </p>
+
+        <h2>[2] \(y(l_2)<h\) を満たす \(s\) の範囲</h2>
+
+        <p>
+            式①に \(x=l_2\) を代入すると、
+        </p>
+
+        <div class="equation">
+        \[
+        -\frac{gl_2^2}{2v^2}s^2
+        +l_2s
+        -\frac{gl_2^2}{2v^2}
+        <h
+        \]
+        </div>
+
+        <p>すなわち、</p>
+
+        <div class="equation">
+        \[
+        s^2-\frac{2v^2}{gl_2}s
+        +1+\frac{2v^2h}{gl_2^2}>0
+        \qquad\cdots④
+        \]
+        </div>
+
+        <p>
+            この左辺を \(g(s)\) と置くと、\(y=g(s)\) のグラフは下に凸の放物線を表します。
+            この場合、放物線が \(s\) 軸と共有点をもたなくても、任意の \(s\) に対して式④を満たすことになります。
+        </p>
+
+        <div class="equation">
+        \[
+        \frac{D'}{4}
+        =
+        \frac{v^4-2ghv^2-g^2l_2^2}{g^2l_2^2}
+        \]
+        </div>
+
+        <p>
+            \(D'<0\) のとき、
+        </p>
+
+        <div class="equation">
+        \[
+        0\le v^2<
+        g\left(h+\sqrt{h^2+l_2^2}\right)
+        \]
+        </div>
+
+        <p>すなわち、</p>
+
+        <div class="equation">
+        \[
+        0\le v<
+        \sqrt{g\left(h+\sqrt{h^2+l_2^2}\right)}
+        \]
+        </div>
+
+        <p>
+            \(v\) がこの範囲にあるとき、任意の \(s\) に対して式④を満たします。
+        </p>
+
+        <p>
+            \(D'\ge0\) のとき、つまり
+        </p>
+
+        <div class="equation">
+        \[
+        v\ge
+        \sqrt{g\left(h+\sqrt{h^2+l_2^2}\right)}
+        \]
+        </div>
+
+        <p>のとき、</p>
+
+        <div class="equation">
+        \[
+        0<s<
+        \frac{v^2-\sqrt{v^4-2ghv^2-g^2l_2^2}}{gl_2}
+        \]
+        </div>
+
+        <p>または</p>
+
+        <div class="equation">
+        \[
+        s>
+        \frac{v^2+\sqrt{v^4-2ghv^2-g^2l_2^2}}{gl_2}
+        \qquad\cdots⑤
+        \]
+        </div>
+
+        <p>
+            [1]、[2] の共通範囲を求めればこの問題は解けます。
+        </p>
+
+        <p>
+            \( \sqrt{g\left(h+\sqrt{h^2+l_1^2}\right)}
+            <v<
+            \sqrt{g\left(h+\sqrt{h^2+l_2^2}\right)} \)
+            のとき、[1]、[2] より、
+        </p>
+
+        <div class="equation">
+        \[
+        \frac{v^2-\sqrt{v^4-2ghv^2-g^2l_1^2}}{gl_1}
+        <s<
+        \frac{v^2+\sqrt{v^4-2ghv^2-g^2l_1^2}}{gl_1}
+        \]
+        </div>
+
+        <p>
+            \(v\ge\sqrt{g\left(h+\sqrt{h^2+l_2^2}\right)}\) のとき、
+            ③と⑤の共通範囲を求めればよいのですが、そのためには各境界値の大小関係を調べる必要があります。
+            これを調べるのはとても大変なので、ここでは省略させていただきます。
+        </p>
+
+        <p>まとめると以下のようになります。</p>
+
+        <ul>
+            <li>
+                \(\sqrt{g\left(h+\sqrt{h^2+l_1^2}\right)}
+                <v<
+                \sqrt{g\left(h+\sqrt{h^2+l_2^2}\right)}\)
+                のとき、③の範囲。
+            </li>
+            <li>
+                \(v\ge\sqrt{g\left(h+\sqrt{h^2+l_2^2}\right)}\)
+                のとき、③と⑤の共通範囲。
+            </li>
+        </ul>
+
 
     
 
