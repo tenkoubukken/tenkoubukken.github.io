@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>炎とプラズマ ー炎とは何かー｜嗚呼物研</title>
+
+
+</head>
+
+
+<body>
+
+<header>
+    <h1 class="title">嗚呼物研</h1>
+    <div class="subtitle">第1号　記事</div>
+</header>
+
+
+<main>
+
+    <h1 class="article-title">
+        炎とプラズマ　― 炎とは何か ―
+    </h1>
+
+    <div class="article-meta">
+        嗚呼物研 第1号
+    </div>
+
+
+    <article class="article">
+
+
+      <p>
+    せっかくなので、前のものを書いた人とは別人だが、私は異なるアプローチで
+    コリオリ力や遠心力について考えよう。それは、変分原理を利用する方法である。
+</p>
+
+<h2>数式</h2>
+
+<p>
+    図１のように座標を置く。
+</p>
+
+<p>
+    \(t\)を時間、\(U\)をポテンシャルエネルギー、\(m\)を物体の質量、
+    \(x'=\frac{dx}{dt}\)、\(x''=\frac{d^2x}{dt^2}\)とする。
+</p>
+
+<p>
+    すると、
+</p>
+
+<div class="equation">
+\[
+X=x\cos\omega t+y\sin\omega t
+\]
+</div>
+
+<div class="equation">
+\[
+Y=-x\sin\omega t+y\cos\omega t
+\]
+</div>
+
+<p>
+    となる。ここで、
+</p>
+
+<div class="equation">
+\[
+L_1=
+\frac{m}{2}(x'^2+y'^2)-U(x,y)
+\]
+</div>
+
+<p>
+    とする。
+</p>
+
+<p>
+    これで \(x,y\) を変換して、
+</p>
+
+<div class="equation">
+\[
+L_2=
+\frac{m}{2}
+\left\{
+(X'-\omega Y)^2+(Y'+\omega X)^2
+\right\}
+-U(x,y)
+\]
+</div>
+
+<p>
+    と書き直す。
+</p>
+
+<p>
+    ここで、オイラー・ラグランジュ方程式というものを解くと、
+</p>
+
+<div class="equation">
+\[
+mX''
+=
+2m\omega Y'
++
+m\omega^2X
+-
+\frac{\partial U}{\partial X}
+\]
+</div>
+
+<div class="equation">
+\[
+mY''
+=
+-2m\omega X'
++
+m\omega^2Y
+-
+\frac{\partial U}{\partial Y}
+\]
+</div>
+
+<p>
+    となる。\(2m\omega Y'\)と\(-2m\omega X'\)はコリオリ力、
+    \(m\omega^2Y\)と\(m\omega^2X\)は遠心力である。
+</p>
+
+<h2>解説</h2>
+
+<p>
+    ただ数式を見ただけではおそらくよくわからず混乱しているだろう。
+    物理は数式の意味を理解することが重要だ。よって、数式の意味を追っていく。
+</p>
+
+<h2>１．変分原理とは</h2>
+
+<p>
+    変分原理はざっくり言えば停留する関数や数値を求める方法である。
+    例えるならば、微分して傾き０になる \(x\) を求めるようなものである。
+    しかし、変分法を使うと関数に対しても停留するものを導くことができる。
+    例えば、\(q(t)\)を未知の関数として、\(S[q]\)という関数
+    （汎関数と呼ばれ、作用ともいう）があるとすると、
+    \(S[q]\)が停留するような \(q\) を変分法により求めることができる。
+</p>
+
+<p>
+    ここで使用するのが、<strong>オイラー・ラグランジュ方程式</strong>である。
+    \(S[q]\)を
+</p>
+
+<div class="equation">
+\[
+S[q]
+=
+\int_{t_1}^{t_2}
+L(q,q',t)\,dt
+\]
+</div>
+
+<p>
+    としたときに、オイラー・ラグランジュ方程式は、
+</p>
+
+<div class="equation">
+\[
+\frac{d}{dt}
+\left(
+\frac{\partial L}{\partial q'}
+\right)
+=
+\frac{\partial L}{\partial q}
+\]
+</div>
+
+<p>
+    となる。詳細な証明は省くが、これを満たすことと
+    \(S[q]\)が停留することは同値である。
+</p>
+
+<p>
+    ここでおそらく、なんでこんなものが必要なのだと疑問に思ったことだろう。
+    化学っぽく言うなれば、現象は安定した方向に向かう。
+    この「安定した状態」を数学的に考えるとき、ある量が変化しないという
+    停留の概念は都合がいいのである（ただし、停留する点は必ずしも極小とは限らない）。
+    そして、これらのことは物体の運動にも言えることで、変分法では数式的には
+    運動は無数にあるが、作用が停留するような運動が現実で行われるという仕組みで考えられる。
+</p>
+
+<h2>２．座標変換</h2>
+
+<div class="equation">
+\[
+X=x\cos\omega t+y\sin\omega t
+\]
+</div>
+
+<div class="equation">
+\[
+Y=-x\sin\omega t+y\cos\omega t
+\]
+</div>
+
+<p>
+    このように座標を変換できることは自明だろう。しかし、これは単なる数学ではなく、
+    物理的に重要な意味を持つ。この座標変換は、イメージでいうと
+    <strong>等速円運動を円の中心に観測者がいて、その観測者から回転する物体を見ている</strong>
+    という意味である。
+</p>
+
+<p>
+    ここで面白いのが、円の中心にいる観測者が回転しながら物体を見る状況を考え、
+    そこに変分法を適用すると、自然とコリオリ力と遠心力が導出されるということである。
+    外から見たら無いけど内側から見たら出てくる見かけの力は聞き覚えがあるだろう。
+    そう、慣性力である。実はコリオリ力も遠心力も慣性力なのだ。
+</p>
+
+<h2>参考文献</h2>
+
+<p>
+    「解析力学」　渡辺悠樹　作
+</p>
+
+
+      
+
+    </article>
+
+
+    <a class="back" href="index.html">
+        ← 一覧に戻る
+    </a>
+
+</main>
+
+
+<footer>
+    嗚呼物研 Physics Research Club<br>
+    © 2026
+</footer>
+
+</body>
+
+</html>
