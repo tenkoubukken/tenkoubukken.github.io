@@ -3,3 +3,16 @@
     color: inherit;
     display: block;
 }
+
+.card {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+    transition: 0.2s;
+}
+
+.card-link:hover .card {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
