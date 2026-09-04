@@ -59,6 +59,174 @@ MathJax = {
 
 <article class="article">
 
+            <p>
+            実は誘電率には複素数バージョンが存在する。これは一見おかしいように思える。
+            なぜなら複素数は直接観測できるわけではないのに物理の定数に複素数が使用されているので、
+            一見物理的意味が無いように思えるからである。しかし、複素誘電率の虚部にはしっかり意味がある。
+            虚部がある事によって、物質による光の強度減衰を表すことができるのだ。
+        </p>
+
+        <h2>２．数式</h2>
+
+        <p>
+            ここからは実際に虚部がどのような意味を持つのかを数式で考える。
+            まず、光を直交座標における \(z\) 軸に進む電磁波と捉える。電場は \(x\) 軸方向に振動するとする。
+        </p>
+
+        <p>
+            また、\(\mu\)：透磁率、\(E\)：電場（スカラー）、
+            \(\vec{E}\)：電場（ベクトル）、\(E_0\)：電場の振幅、
+            \(I\)：光強度、\(\varepsilon=\varepsilon_1+i\varepsilon_2\)：複素誘電率、
+            \(H\)：磁場、\(B\)：磁束密度、\(\vec{S}_{av}\)：時間平均ポインティングベクトル
+            とする。
+        </p>
+
+        <p>一般的な電場の式から、</p>
+
+        <div class="equation">
+        \[
+        E=E_0\exp\left[Kz-\omega t\right]
+        \]
+        </div>
+
+        <p>\(K\) は定数とする。波動方程式というものを利用すると、</p>
+
+        <div class="equation">
+        \[
+        K=\omega\sqrt{\mu(\varepsilon_1+i\varepsilon_2)}
+        \]
+        </div>
+
+        <p>が導出される。ここで</p>
+
+        <div class="equation">
+        \[
+        K=K_1+iK_2
+        \]
+        </div>
+
+        <p>とすると、</p>
+
+        <div class="equation">
+        \[
+        E
+        =
+        E_0
+        \exp\left[i(K_1z-\omega t)\right]
+        \exp(-K_2z)
+        \]
+        </div>
+
+        <p>
+            光強度は、\(\vec n\) を光の進む向きの単位ベクトルとすると、
+        </p>
+
+        <div class="equation">
+        \[
+        I=\vec{S}_{av}\cdot\vec n
+        \]
+        </div>
+
+        <p>となる。ここで、\(\vec{S}_{av}\) を求めたい。</p>
+
+        <div class="equation">
+        \[
+        \vec{S}_{av}
+        =
+        \frac{1}{2}\operatorname{Re}
+        \left(\vec E\times\vec H\right)
+        \]
+        </div>
+
+        <p>また、</p>
+
+        <div class="equation">
+        \[
+        \nabla\times\vec E
+        =
+        -\mu\frac{\partial\vec H}{\partial t}
+        \]
+        </div>
+
+        <p>これらのことを組み合わせると、</p>
+
+        <div class="equation">
+        \[
+        I=
+        \frac{K_1}{2\mu\omega}
+        |E_0|^2
+        \exp(-2K_2z)
+        \]
+        </div>
+
+        <p>
+            複素誘電率がある事によって
+            \(\exp(-2K_2z)\) の部分が生じる。これによって強度が減衰する。
+            \(K_2\) は実験結果から決定することができる。
+        </p>
+
+        <h2>３．思考</h2>
+
+        <p>
+            ここまで見た皆さんは、納得はできるけれども、こんなのどうやって思いつくんだと思うだろう。
+            強度減衰を考えたいからといって、複素数に必然的にたどり着くとも思えない。
+            しかし、減衰の仕組みから考えることによって誘電率が複素数になることを必然的に求めることができる。
+        </p>
+
+        <h2>４．導出</h2>
+
+        <p>
+            全体の方針をざっくり言うと、物質内部の分子は電場によって動くのだが、
+            その動きが電場の変化に対して若干遅れる。これにより電場から物質に流れ込むエネルギーが発生し、
+            それが原因になって光強度減衰が起こる。これを踏まえて数式を考える。
+        </p>
+
+        <p>
+            \(W(\theta,t)\)：双極子の角度分布、\(W_0\)：並行状態での角度分布、
+            \(\tau\)：平衡状態になるまでの時間、
+            \(\varepsilon_s\)：周波数が小さいときの誘電率、
+            \(\varepsilon_\infty\)：周波数が大きい時の誘電率
+        </p>
+
+        <p>時間依存の角度分布の変化を表すと、</p>
+
+        <div class="equation">
+        \[
+        \frac{dW}{dt}
+        =
+        -\frac{1}{\tau(t)}
+        \left(W(t)-W_0(t)\right)
+        \]
+        </div>
+
+        <p>これを元に計算すると、最終的には、</p>
+
+        <div class="equation">
+        \[
+        \varepsilon
+        =
+        \varepsilon_\infty
+        +
+        \frac{\varepsilon_s-\varepsilon_\infty}
+        {1+i\omega\tau}
+        \]
+        </div>
+
+        <p>
+            となる。このように仕組みから必然的に複素誘電率が導かれる
+            （過程を丁寧に解説したいところだが、複数分野をまたぎ、かなりややこしくなるので、今回は省略する）。
+        </p>
+
+        <p>
+            このように、一見現実で存在せず、物理的意味もなさそうな複素数の定数が仕組みから自然に導出されるのは、
+            なんとも奇妙なものである。
+        </p>
+
+        <h2>参考文献</h2>
+        <p>
+            Nonlinear Model of non-Debye Relaxation<br>
+            Boris A. Zon, Voronezh State University, University Sq.1, 394006 Voronezh, Russia
+        </p>
 
 
     
