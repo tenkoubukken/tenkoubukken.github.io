@@ -1,1 +1,494 @@
+<!DOCTYPE html>
+<html lang="ja">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+  <script>
+MathJax = {
+    tex: {
+        inlineMath: [['\\(', '\\)']]
+    }
+};
+</script>
+
+<script async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+    <title>コリオリ力ってなんだろう｜嗚呼物研</title>
+
+
+</head>
+
+
+<body>
+
+<header>
+    <h1 class="title">嗚呼物研</h1>
+    <div class="subtitle">第1号　記事</div>
+</header>
+
+
+<main>
+
+    <h1 class="article-title">
+        コリオリ力ってなんだろう
+    </h1>
+
+    <div class="article-meta">
+        嗚呼物研 第1号
+    </div>
+
+
+<article class="article">
+
+
+    <p>
+        皆さんはコリオリ力という言葉を聞いたことがあるだろうか？
+        おそらく多くの方が「地球大気の運動にとって重要な力なのは知っているけど、よくわからないな」とお思いだろう。
+        ここでは、高校数学の知識を交えながら、できるだけわかりやすい解説を試みる。
+    </p>
+
+
+    <h2>１．コリオリ力の概観</h2>
+
+    <p>
+        さて、まずはコリオリ力がどのように現れるのかをざっくりと説明する。
+        図1のように、反時計回りに回転する円盤の中心にいる人が、点Aに向かってボールを投げる。
+        ただし、ボールが飛んでいる最中も点Aは回転しているから、ボールが点B₂、点B₃、点B₄にある時は、
+        点Aはそれぞれ点A₂、点A₃、点A₄に移動する。
+    </p>
+
+    <p>
+        この場合、観測者は円盤の上から見ており、静止している。
+        しかし、地球上の人や気象衛星ひまわりのように、観測者が円盤と同じ方向に同じ速さで回転しているとどうだろうか。
+        点Aはずっと同じ場所に見えるから、ボールの軌道が曲げられるように見える。
+        観測者が円盤（地球）と共に回転していないならばボールは曲げられないのだが、
+        気象を扱う時には、観測者も回転してボールの軌道が曲げられると考えるほうが便利である。
+        このことから、気象学では物体の運動する向きを変える力を想定しなければならず、
+        これをコリオリ力と呼んでいるのだ。
+    </p>
+
+    <img src="コリ何1.png" alt="図">
+
+
+    <h2>２．コリオリ力の導き方（東西方向の風について）</h2>
+
+    <p>
+        次に、コリオリ力が数式によってどう表されるかを考える。
+        厳密な求め方は難しいので、高校生にとって最も親しみやすい方法でコリオリ力を導く。
+    </p>
+
+    <p>
+        はじめに東西方向の風について考えよう。
+        東西方向の風速を \(u\) [m/s]（西風を正とする）、
+        地球の半径を \(R\) [m]、
+        地球の角速度を \(\Omega\) [rad/s]、
+        風を観測している地点の緯度を \(\varphi\) [rad] とする。
+    </p>
+
+    <p>
+        観測地点は、自転軸から \(R\cos\varphi\) 離れたところを角速度 \(\Omega\) で周っていることになる。
+        すると、円運動を勉強した高校生は観測地点が
+        \(R\cos\varphi\) の速さで回転していることがわかる。
+        2年生の夏休み前に習う \(v=r\omega\) を用いた。
+    </p>
+
+    <p>
+        地球に相対的な速さが \(u\) であるから、宇宙で静止している観測者から見れば、
+        空気は \(u+R\Omega\cos\varphi\) で動いている。
+        向心加速度は \(a=v^2/r\) だから、
+    </p>
+
+    <div class="equation">
+        \[
+        a=
+        \frac{(u+R\Omega\cos\varphi)^2}
+        {R\cos\varphi}
+        \]
+    </div>
+
+    <p>
+        と表せる。単位質量の空気に働く向心力 \(F\) は加速度に等しいから、
+    </p>
+
+    <div class="equation">
+        \[
+        \begin{aligned}
+        F
+        &=\frac{(u+R\Omega\cos\varphi)^2}
+        {R\cos\varphi}\\
+        &=\frac{u^2}{R\cos\varphi}
+        +2u\Omega
+        +R\Omega^2\cos\varphi
+        \end{aligned}
+        \tag{1}
+        \]
+    </div>
+
+    <p>
+        ⑴式は何を意味しているだろうか。
+        もし地球が自転しておらず、半径 \(R\cos\varphi\)、速さ \(u\) で円運動しているならば、
+        \(\frac{u^2}{R\cos\varphi}\) という遠心力のみが働くだろう。
+        つまり、\(2u\Omega\) と \(R\Omega^2\cos\varphi\) は地球が自転していることで現れる力だと考えられる。
+    </p>
+
+    <p>
+        \(R\Omega^2\cos\varphi\) は、地球の自転に伴う遠心力である。
+        低緯度ほどこの遠心力の効果を受けやすいので、地球は赤道付近が膨らんだ楕円体になっている。
+        そして \(2u\Omega\) は風速に依存する力なので、地球上で運動する物体にのみ働く。
+        実はこの力こそがコリオリ力の正体である。
+    </p>
+
+    <p>
+        図3のように、この力を鉛直成分と水平成分に分けると、
+        水平成分 \(2u\Omega\sin\varphi\) が南に向かう力として西風に作用することがわかる。
+    </p>
+
+    <img src="コリ何2.png" alt="図">
+
+    
+    <h2>３．コリオリ力の導き方（南北方向の風について）</h2>
+
+    <p>
+        東西方向の風に働くコリオリ力の水平成分は
+        \(2u\Omega\sin\varphi\) であることがわかった。
+        南北方向の風に働くコリオリ力も同じく
+        \(2v\Omega\sin\varphi\) である（\(v\) は南風を正とする）。
+        どうやって導かれるのか見ていこう。
+    </p>
+
+    <p>
+        まずは角運動量保存則について知っておく必要がある。
+        この法則は、簡単に言うと円運動する物体の速さは半径を小さくしていくと大きくなるというものである。
+        式で書くならば、半径 \(r_1\)、速さ \(v_1\) で円運動していた物体が、
+        半径 \(r_2\)、速さ \(v_2\) になった時、
+    </p>
+
+    <div class="equation">
+        \[
+        r_1v_1=r_2v_2
+        \tag{2}
+        \]
+    </div>
+
+    <p>
+        が成り立つ。使い古された例ではあるが、スケート選手が両手を広げて回転している状態から、
+        手を縮めていくとどんどん回転が速くなるのはこの法則による。
+    </p>
+
+    <p>
+        それでは、東西方向に \(u\) の速さを持つ単位質量の空気を南北方向に動かしてみよう。
+        この空気が、\(t\) [s] 間に緯度 \(\varphi\) から
+        \(\varphi+\Delta\varphi\) に移動したことで速さが
+        \(u+\Delta u\) になったとする。
+    </p>
+
+    <p>
+        移動前後で角運動量は保存されるから、⑵式より
+        移動前と移動後で（自転軸からの距離）×（宇宙で制している人から見た空気の速さ）は等しいから
+    </p>
+
+    <div class="equation">
+        \[
+        R\cos\varphi
+        \left(R\Omega\cos\varphi+u\right)
+        =
+        R\cos(\varphi+\Delta\varphi)
+        \left\{
+        R\Omega\cos(\varphi+\Delta\varphi)
+        +u+\Delta u
+        \right\}
+        \tag{3}
+        \]
+    </div>
+
+    <p>
+        ⑶式を両辺 \(R\) で割り、少し展開すると、
+    </p>
+
+    <div class="equation">
+        \[
+        R\Omega\cos^2\varphi+u\cos\varphi
+        =
+        R\Omega\cos^2(\varphi+\Delta\varphi)
+        +(u+\Delta u)\cos(\varphi+\Delta\varphi)
+        \tag{4}
+        \]
+    </div>
+
+    <p>
+        ここで、\(\cos(\varphi+\Delta\varphi)\) に加法定理を用いると、
+    </p>
+
+    <div class="equation">
+        \[
+        \cos(\varphi+\Delta\varphi)
+        =
+        \cos\varphi\cos\Delta\varphi
+        -
+        \sin\varphi\sin\Delta\varphi
+        \]
+    </div>
+
+    <p>
+        である。また、\(\Delta\varphi\) が十分に小さいとき、
+    \(\sin\Delta\varphi\simeq\Delta\varphi\)、
+    \(\cos\Delta\varphi\simeq1\)
+    と近似できるから、
+    \[
+    \cos(\varphi+\Delta\varphi)
+    \simeq
+    \cos\varphi-\Delta\varphi\sin\varphi
+    \]
+    とする。
+    ⑷式の右辺は、
+    </p>
+
+    <div class="equation">
+        \[
+        \begin{aligned}
+        &R(\cos\varphi-\Delta\varphi\sin\varphi)^2
+        +(u+\Delta u)
+        (\cos\varphi-\Delta\varphi\sin\varphi)\\
+        &=
+        R\left(
+        \cos^2\varphi
+        -2\Delta\varphi\cos\varphi\sin\varphi
+        +\Delta\varphi^2\sin^2\varphi
+        \right)\\
+        &\quad
+        +u\cos\varphi
+        -u\Delta\varphi\sin\varphi
+        +\Delta u\cos\varphi
+        -\Delta u\Delta\varphi\sin\varphi
+        \end{aligned}
+        \]
+    </div>
+
+    <p>
+        \(\Delta\varphi\) や \(\Delta u\) は微小量なので、2乗されたものや積は0とみなすことができる。
+        よって、⑷式は、
+    </p>
+
+    <div class="equation">
+        \[
+        R\cos^2\varphi+u\cos\varphi
+        =
+        R(\cos^2\varphi
+        -2\Delta\varphi\cos\varphi\sin\varphi)
+        +u\cos\varphi
+        -u\Delta\varphi\sin\varphi
+        +\Delta u\cos\varphi
+        \]
+    </div>
+
+    <div class="equation">
+        \[
+        -2R\cos\varphi\sin\varphi\Delta\varphi
+        -u\Delta\varphi\sin\varphi
+        +\Delta u\cos\varphi
+        =0
+        \tag{5}
+        \]
+    </div>
+
+    <p>
+        南北方向の風に働く力を考えていたので、ここで南北方向の速さ \(v\) を
+    </p>
+
+    <div class="equation">
+        \[
+        v=\frac{R\Delta\varphi}{Delta t}
+        \tag{6}
+        \]
+    </div>
+
+    <p>
+        と表す。すなわち、宇宙で静止している人から見ると、
+        \(t\) の間に \(R\Delta\varphi\) だけ動いたのだから、
+        \(\Delta\varphi/t\) という南北方向の角速度を持っていることになる。
+    </p>
+
+    <p>
+        ⑸式を両辺 \(t\) で割り、⑹式を適用すると、
+    </p>
+
+    <div class="equation">
+        \[
+        -2v\Omega\cos\varphi\sin\varphi
+        -\frac{uv}{R}\sin\varphi
+        +\frac{\Delta u}{t}\cos\varphi
+        =0
+        \]
+    </div>
+
+    <p>したがって、</p>
+
+    <div class="equation">
+        \[
+        \frac{\Delta u}{t}
+        =
+        2v\Omega\sin\varphi
+        +
+        \frac{uv}{R}\tan\varphi
+        \tag{7}
+        \]
+    </div>
+
+    <p>
+        ⑺式の右辺は何を表しているだろうか。
+        右辺第1項はまさしくコリオリ力である。
+        第2項は \(\Omega\) の関数ではないから、地球の自転とは関係のない項らしい。
+        地球が球体をしているために出てきたものだ。
+    </p>
+
+    <p>
+        試しに第2項／第1項を計算してみる。
+        \(u=10\) [m/s]、\(\varphi=\pi/3\) とすると、
+    </p>
+
+    <div class="equation">
+        \[
+        \frac{
+        \dfrac{uv}{R}\tan\varphi
+        }{
+        2v\Omega\sin\varphi
+        }
+        =
+        \frac{u}{2R\Omega\cos\varphi}
+        \]
+    </div>
+
+    <div class="equation">
+        \[
+        =
+        \frac{
+        10
+        }{
+        2(6.4\times10^6)
+        (7.3\times10^{-5})
+        \cos(\pi/3)
+        }
+        \simeq
+        0.021
+        \]
+    </div>
+
+    <p>
+        つまり、第2項は第1項の数％しかない。
+        だから第2項を無視してコリオリ力だけが働いていると考えてもよい、
+        というのが気象学での考え方である。
+    </p>
+
+    <p>
+        もう少し考察してみると、\(u\)、\(v\) はそれぞれ西風、南風を正とした。
+        そのため空気が北に向かうときは西向きに曲げようとするコリオリ力が働く。
+        北向きの風以外でも、一般にコリオリ力は風の進行方向に直角右向きに働く。
+    </p>
+
+
+    <h2>４．コリオリ力にまつわる小話　～時計回りの竜巻がある！？～</h2>
+
+    <p>
+        コリオリ力が気象に大きな影響を与えているのは、地理総合を学んだ人なら十分ご存じだろう。
+        例えば、北半球では高気圧は時計回りに風が吹き出し、低気圧は反時計回りに風が吹き込む。
+        確かに時計回りの台風は、北半球には存在しない。
+        ただし、時計回りの竜巻なら発生する。
+        割合的には、80パーセント以上は反時計回りだが、残りは時計回りらしい。
+    </p>
+
+    <p>
+        竜巻というのは、地上付近の渦が積乱雲に伴う上昇気流により引きのばされて生じる現象だから、
+        低気圧性の渦であるはずだ。
+        それなのにどうして時計回りの竜巻が存在するのだろうか。
+    </p>
+
+
+    <img src="コリ何3.png" alt="図">
+
+    <p>
+        図4のように等圧線が曲がった場所で吹く風に働く力を考える。
+        まず前提として、空気が等速直線運動をするならば、その空気に働く力はつり合う。
+        気圧傾度力という言葉が出てきているが、これは高圧部から低圧部に向く力であり、
+        つまり等圧線に垂直な向きに働く。
+    </p>
+
+    <p>
+        もし等圧線が直線であれば、気圧傾度力とコリオリ力だけが働くので、
+        コリオリ力の大きさは気圧傾度力の大きさに等しく、
+        向きは反対（低圧部から高圧部）になる
+        （地表付近だと摩擦力も働くが、ここでは無視した）。
+    </p>
+
+    <p>
+        コリオリ力は風の向きに対して直角右向きに働く力であったから、
+        風は高圧部を右に見る。つまり、等圧線に平行に吹く。
+    </p>
+
+    <p>
+        しかし、等圧線が図4のように曲がっていたら、
+        低圧部から高圧部に向く遠心力が働くはずである。
+        整理すると、働く力の大きさとして、
+    </p>
+
+    <div class="equation">
+        \[
+        \text{気圧傾度力}
+        =
+        2v\Omega\sin\varphi
+        +
+        \frac{v^2}{r}
+        \]
+    </div>
+
+    <p>
+        竜巻の話に戻すと、積乱雲による強い上昇気流は、
+        局所的に大きな気圧傾度力を生む。
+        これにより風の速さ \(v\) は大きくなるが、
+        \(v\) の増大とともに \(v^2\) を含む遠心力の項が支配的になる。
+    </p>
+
+    <p>
+        また、台風と異なるのは、竜巻はスケールの小さな現象であるため、
+        回転の軸からの距離 \(r\) が小さいということだ。
+        こういうわけで、竜巻はほとんど気圧傾度力と遠心力がつり合っており、
+        風の向きを決めるコリオリ力の影響は小さいため時計回りでも存在できるのである。
+    </p>
+
+
+    <h2>参考文献</h2>
+
+    <p>
+        廣田道夫ほか（2013）
+        「高層気象の科学 -基礎理論から観測技術まで-」
+        成山堂書店
+    </p>
+
+    <p>
+        小倉義光（1999）
+        「一般気象学」
+        東京大学出版
+    </p>
+
+</article>
+
+
+    <a class="back" href="index.html">
+        ← 一覧に戻る
+    </a>
+
+</main>
+
+
+<footer>
+    嗚呼物研 Physics Research Club<br>
+    © 2026
+</footer>
+
+</body>
+
+</html>
