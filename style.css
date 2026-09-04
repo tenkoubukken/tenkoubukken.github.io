@@ -206,3 +206,26 @@ footer {
         line-height: 2;
     }
 }
+
+
+
+
+
+
+html {
+    overflow-x: hidden;
+}
+
+/* 数式がスマホ画面からはみ出さないようにする */
+.equation {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* スマホでは数式が少し小さくなります */
+@media (max-width: 600px) {
+    .equation {
+        font-size: 0.9em;
+    }
+}
